@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png" />
+  <title>Shapes</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+  <link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" />
+  <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css' %}" />
+  <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}" />
+  <link rel="stylesheet" href="{% static 'vendors/animate-css/animate.css' %}" />
+  <link rel="stylesheet" href="{% static 'vendors/jquery-ui/jquery-ui.css' %}" />
+  <!-- main css -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+
+</head>
+
+<body>
+  <!--================Header Menu Area =================-->
+  <header class="header_area">
+    <div class="top_menu">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="float-left">
+              <p>Phone: +01 256 25 235</p>
+              <p>email: info@eiser.com</p>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="float-right">
+              <ul class="right_side">
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_menu" style="background-color:#ffff00;">
+      <div class="container" >
+        <nav class="navbar navbar-expand-lg navbar-light w-100" >
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <a class="navbar-brand logo_h" href="">
+            <img src="{% static 'img/Shapes enhanced.png' %}"  height="70" alt="" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <div class="row w-100 mr-0">
+              <div class="col-lg-7 pr-0">
+                <ul class="nav navbar-nav center_nav pull-right">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
+                     <li class="nav-item active">
+                    <a class="nav-link" href="/">About</a>
+                  </li>
+
+                   <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false">by Category</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/shop_by_category/">Churidhar</a>
+                      </li>
+                    </ul>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="/products/">Products</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-lg-5 pr-0">
+                <ul class="nav navbar-nav navbar-right right_nav pull-right">
+                  <li class="nav-item">
+                    <a href="/cart/" class="icons">
+                      <i class="ti-shopping-cart"></i>
+                    </a>
+                  </li>
+
+                  <li class="nav-item submenu dropdown">
+                    <a href="#" class="icons" data-toggle="dropdown" role="button" aria-haspopup="true"
+                      aria-expanded="false"><i class="ti-user" aria-hidden="true"></i></a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/signin/">SignIn</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/signup/">SignUp</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/wishlist/" class="icons">
+                      <i class="ti-heart" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!--================Header Menu Area =================-->
+
+  <!--================Home Banner Area =================-->
+  <section class="home_banner_area mb-40" >
+    <div class="banner_inner d-flex align-items-center">
+      <div class="container">
+        <div class="banner_content row">
+          <div class="col-lg-12">
+            <p class="sub text-uppercase">Unique Collection</p>
+            <h3><span>Show</span> Your <br />Personal <span>Style</span></h3>
+            <h4>Fowl saw dry which a above together place.</h4>
+            <a class="main_btn mt-40" href="#">View Collection</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================End Home Banner Area =================-->
+
+  <!-- Start feature Area -->
+  <section class="feature-area section_gap_bottom_custom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="single-feature">
+            <a href="#" class="title">
+              <i class="flaticon-money"></i>
+              <h3>Money back gurantee</h3>
+            </a>
+            <p>Shall open divide a one</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-feature">
+            <a href="#" class="title">
+              <i class="flaticon-truck"></i>
+              <h3>Free Delivery</h3>
+            </a>
+            <p>Shall open divide a one</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-feature">
+            <a href="#" class="title">
+              <i class="flaticon-support"></i>
+              <h3>Alway support</h3>
+            </a>
+            <p>Shall open divide a one</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-feature">
+            <a href="#" class="title">
+              <i class="flaticon-blockchain"></i>
+              <h3>Secure payment</h3>
+            </a>
+            <p>Shall open divide a one</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End feature Area -->
+
+  <!--================ Feature Product Area =================-->
+  <section class="feature_product_area section_gap_bottom_custom">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="main_title">
+            <h2><span>Featured Categories</span></h2>
+            <p>Bring called seed first of third give itself now ment</p>
+          </div>
+        </div>
+      </div>
+
+   <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="single-feature">
+            <a href="#" class="title">
+              <i class="flaticon-money"></i>
+              <h3>Kurthas</h3>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-feature">
+            <a href="#" class="title">
+              <i class="flaticon-truck"></i>
+              <h3>Free Delivery</h3>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-feature">
+            <a href="#" class="title">
+              <i class="flaticon-support"></i>
+              <h3>Alway support</h3>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-feature">
+            <a href="#" class="title">
+              <i class="flaticon-blockchain"></i>
+              <h3>Secure payment</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================ End Feature Product Area =================-->
+
+  <!--================ Offer Area =================-->
+  <section class="offer_area" style="height:300px;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="text-center">
+          <div class="offer_content">
+            <h3 class="text-uppercase fw-bold" style="font-weight: 600; color:#ffff00;">Need help finding something?</h3>
+           <a href="https://wa.me/919876543210" style="color:white;"
+   class="main_btn mb-20 mt-5"
+   target="_blank">
+   Let's chat
+</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================ End Offer Area =================-->
+
+  <!--================ New Product Area =================-->
+  <section class="inspired_product_area section_gap_bottom_custom mt-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="main_title">
+            <h2><span>New Arrivals</span></h2>
+            <p>Bring called seed first of third give itself now ment</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210032224_IMG_5437.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>Red&Black Kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210032854_IMG_5441.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>Black Kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210034328_IMG_5445.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>Teal V-neck kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210033716_IMG_5444.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>Floral black kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>  <!--================ End New Product Area =================-->
+
+  <!--================ Inspired Product Area =================-->
+  <section class="inspired_product_area section_gap_bottom_custom">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="main_title">
+            <h2><span>Top Products</span></h2>
+            <p>Bring called seed first of third give itself now ment</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210035403_IMG_5450.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>Patterns Style red kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210041921_IMG_5470.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>off-white&black kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210041459_IMG_5465.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>Gray kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210040029_IMG_5454.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>Traditional kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210041135_IMG_5462.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>red&black kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+<div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210040031_IMG_5455.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>Kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210041135_IMG_5462.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>red&black kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-product">
+            <div class="product-img">
+              <img class="img-fluid w-100" src="{% static 'img/product/20250210041459_IMG_5465.JPG' %}" alt="" />
+              <div class="p_icon">
+                <a href="#">
+                  <i class="ti-eye"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-heart"></i>
+                </a>
+                <a href="#">
+                  <i class="ti-shopping-cart"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product-btm">
+              <a href="#" class="d-block">
+                <h4>Latest kurtha set</h4>
+              </a>
+              <div class="mt-3">
+                <span class="mr-4">$25.00</span>
+                <del>$35.00</del>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================ End Inspired Product Area =================-->
+
+  <!--================ Start Blog Area =================-->
+<!--  <section class="blog-area section-gap">-->
+<!--    <div class="container">-->
+<!--      <div class="row justify-content-center">-->
+<!--        <div class="col-lg-12">-->
+<!--          <div class="main_title">-->
+<!--            <h2><span>latest blog</span></h2>-->
+<!--            <p>Bring called seed first of third give itself now ment</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="row">-->
+<!--        <div class="col-lg-4 col-md-6">-->
+<!--          <div class="single-blog">-->
+<!--            <div class="thumb">-->
+<!--              <img class="img-fluid" src="img/b1.jpg" alt="">-->
+<!--            </div>-->
+<!--            <div class="short_details">-->
+<!--              <div class="meta-top d-flex">-->
+<!--                <a href="#">By Admin</a>-->
+<!--                <a href="#"><i class="ti-comments-smiley"></i>2 Comments</a>-->
+<!--              </div>-->
+<!--              <a class="d-block" href="single-blog.html">-->
+<!--                <h4>Ford clever bed stops your sleeping-->
+<!--                  partner hogging the whole</h4>-->
+<!--              </a>-->
+<!--              <div class="text-wrap">-->
+<!--                <p>-->
+<!--                  Let one fifth i bring fly to divided face for bearing the divide unto seed winged divided light-->
+<!--                  Forth.-->
+<!--                </p>-->
+<!--              </div>-->
+<!--              <a href="#" class="blog_btn">Learn More <span class="ml-2 ti-arrow-right"></span></a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        -->
+<!--        <div class="col-lg-4 col-md-6">-->
+<!--          <div class="single-blog">-->
+<!--            <div class="thumb">-->
+<!--              <img class="img-fluid" src="img/b2.jpg" alt="">-->
+<!--            </div>-->
+<!--            <div class="short_details">-->
+<!--              <div class="meta-top d-flex">-->
+<!--                <a href="#">By Admin</a>-->
+<!--                <a href="#"><i class="ti-comments-smiley"></i>2 Comments</a>-->
+<!--              </div>-->
+<!--              <a class="d-block" href="single-blog.html">-->
+<!--                <h4>Ford clever bed stops your sleeping-->
+<!--                  partner hogging the whole</h4>-->
+<!--              </a>-->
+<!--              <div class="text-wrap">-->
+<!--                <p>-->
+<!--                  Let one fifth i bring fly to divided face for bearing the divide unto seed winged divided light-->
+<!--                  Forth.-->
+<!--                </p>-->
+<!--              </div>-->
+<!--              <a href="#" class="blog_btn">Learn More <span class="ml-2 ti-arrow-right"></span></a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="col-lg-4 col-md-6">-->
+<!--          <div class="single-blog">-->
+<!--            <div class="thumb">-->
+<!--              <img class="img-fluid" src="img/b3.jpg" alt="">-->
+<!--            </div>-->
+<!--            <div class="short_details">-->
+<!--              <div class="meta-top d-flex">-->
+<!--                <a href="#">By Admin</a>-->
+<!--                <a href="#"><i class="ti-comments-smiley"></i>2 Comments</a>-->
+<!--              </div>-->
+<!--              <a class="d-block" href="single-blog.html">-->
+<!--                <h4>Ford clever bed stops your sleeping-->
+<!--                  partner hogging the whole</h4>-->
+<!--              </a>-->
+<!--              <div class="text-wrap">-->
+<!--                <p>-->
+<!--                  Let one fifth i bring fly to divided face for bearing the divide unto seed winged divided light-->
+<!--                  Forth.-->
+<!--                </p>-->
+<!--              </div>-->
+<!--              <a href="#" class="blog_btn">Learn More <span class="ml-2 ti-arrow-right"></span></a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+  <!--================ End Blog Area =================-->
+<!-- Reviews Section -->
+<section style="max-width: 1100px; margin: 40px auto; padding: 20px;">
+  <h2 style="font-size: 28px; font-weight: bold; margin-bottom: 16px; text-align: center;">
+    Customer Reviews
+  </h2>
+  <p style="text-align: center; margin-bottom: 24px; color: #555;">
+    What our customers say about <strong>SHAPES</strong>.
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+
+    <!-- Review 1 -->
+    <div style="border: 1px solid #eee; border-radius: 12px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+      <p style="font-size: 18px; color: #f4b400; margin-bottom: 8px;">★★★★★</p>
+      <p style="font-style: italic; margin-bottom: 12px;">
+        "Excellent service and quick support. The team at Shapes really cares about their customers."
+      </p>
+      <p style="font-weight: bold; margin: 0;">– John D.</p>
+    </div>
+
+    <!-- Review 2 -->
+    <div style="border: 1px solid #eee; border-radius: 12px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+      <p style="font-size: 18px; color: #f4b400; margin-bottom: 8px;">★★★★☆</p>
+      <p style="font-style: italic; margin-bottom: 12px;">
+        "Very professional and reliable. Happy with the overall experience."
+      </p>
+      <p style="font-weight: bold; margin: 0;">– Sarah K.</p>
+    </div>
+
+    <!-- Review 3 -->
+    <div style="border: 1px solid #eee; border-radius: 12px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+      <p style="font-size: 18px; color: #f4b400; margin-bottom: 8px;">★★★★★</p>
+      <p style="font-style: italic; margin-bottom: 12px;">
+        "Shapes delivered more than expected. Highly recommend them to anyone!"
+      </p>
+      <p style="font-weight: bold; margin: 0;">– Michael P.</p>
+    </div>
+
+  </div>
+</section>
+
+  <!--================ start footer Area  =================-->
+<footer class="footer-area section_gap">
+  <div class="container">
+    <div class="row">
+
+      <!-- Shop Categories -->
+      <div class="col-lg-2 col-md-6 single-footer-widget">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Dresses</a></li>
+          <li><a href="#">Tops & Blouses</a></li>
+          <li><a href="#">Kurtis & Ethnic Wear</a></li>
+          <li><a href="#">Sarees</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6 single-footer-widget">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Collection</a></li>
+          <li><a href="#">Offers & Discounts</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Care -->
+      <div class="col-lg-2 col-md-6 single-footer-widget">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shipping & Delivery</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-lg-2 col-md-6 single-footer-widget">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+          <li><a href="mailto:info@boutique.com">info@boutique.com</a></li>
+          <li><a href="#">123 Fashion Street, Mumbai</a></li>
+          <li><a href="https://wa.me/919876543210" target="_blank">Chat on WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-lg-4 col-md-6 single-footer-widget">
+        <h4>Stay Updated</h4>
+        <p>Subscribe for new arrivals, style tips & exclusive offers.</p>
+        <div class="form-wrap" id="mc_embed_signup">
+          <form target="_blank" action="#" method="get" class="form-inline">
+            <input class="form-control" name="EMAIL" placeholder="Your Email Address"
+                   onfocus="this.placeholder = ''"
+                   onblur="this.placeholder = 'Your Email Address '" required="" type="email">
+            <button class="click-btn btn btn-default">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom row align-items-center mt-3">
+      <p class="footer-text m-0 col-lg-8 col-md-12">
+        Copyright &copy;
+        <script>document.write(new Date().getFullYear());</script>
+        All rights reserved | <strong>Your Boutique Name</strong>
+      </p>
+      <div class="col-lg-4 col-md-12 footer-social text-lg-end text-md-start">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-whatsapp"></i></a>
+        <a href="#"><i class="fa fa-pinterest"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!--================ End footer Area  =================-->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/stellar.js' %}"></script>
+  <script src="{% static 'vendors/lightbox/simpleLightbox.min.js' %}"></script>
+  <script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+  <script src="{% static 'vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendors/isotope/isotope-min.js' %}"></script>
+  <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+  <script src="{% static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+  <script src="{% static 'js/mail-script.js' %}"></script>
+  <script src="{% static 'js/theme.js' %}"></script>
+</body>
+
+</html>

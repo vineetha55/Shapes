@@ -1,0 +1,52 @@
+{% include 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm rounded-3">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0">✏️ Edit Subcategory</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Parent Category</label>
+                            <select class="form-select" id="category" name="category" required>
+                                {% for cat in categories %}
+                                    <option value="{{ cat.id }}" {% if cat.id == subcategory.category.id %}selected{% endif %}>
+                                        {{ cat.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Subcategory Name</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ subcategory.name }}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <select class="form-select" id="status" name="status" required>
+                                <option value="active" {% if subcategory.status == 'active' %}selected{% endif %}>Active</option>
+                                <option value="inactive" {% if subcategory.status == 'inactive' %}selected{% endif %}>Inactive</option>
+                            </select>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'sub_categories' %}" class="btn btn-secondary">Back</a>
+                            <button type="submit" class="btn btn-warning">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
