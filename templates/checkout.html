@@ -1,0 +1,257 @@
+{% load static %}
+{% include 'index_nav.html' %}
+
+    <!--================Home Banner Area =================-->
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+          <div
+            class="banner_content d-md-flex justify-content-between align-items-center"
+          >
+            <div class="mb-3 mb-md-0">
+              <h2>Product Checkout</h2>
+              <p>Very us move be blessed multiply night</p>
+            </div>
+            <div class="page_link">
+              <a href="/">Home</a>
+              <a href="">Product Checkout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================Checkout Area =================-->
+  <section class="checkout_area section_gap">
+  <div class="container">
+    <div class="billing_details">
+      <div class="row">
+        <div class="col-lg-6">
+
+  <!-- Saved Address List -->
+  <h4 class="mb-3">Select Address</h4>
+  <div class="list-group">
+    <!-- Example saved addresses loop -->
+    {% for address in addresses %}
+      <label class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <input class="form-check-input me-2" type="radio" name="selected_address" value="{{ address.id }}" {% if forloop.first %}checked{% endif %}>
+          <strong>{{ address.full_name }}</strong><br>
+          {{ address.house_name }}, {{ address.city }}, {{ address.state }} - {{ address.pincode }}<br>
+          <small>{{ address.phone }}</small>
+        </div>
+      </label>
+    {% empty %}
+      <p>No saved addresses found.</p>
+    {% endfor %}
+  </div>
+
+  <!-- Add New Address Button -->
+  <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#addAddressModal">
+    + Add New Address
+  </button>
+
+</div>
+
+<!-- Modal for Add New Address -->
+
+        <!-- Order Summary -->
+        <div class="col-lg-6">
+          <div class="order_box">
+            <h2>Your Order</h2>
+            <ul class="list">
+              <li>
+                <a href="#">Product <span>Total</span></a>
+              </li>
+              {% for item in cart_items %}
+                <li>
+                  <a href="#">
+                    {{ item.product.name }}
+                    <span class="middle">x {{ item.quantity }}</span>
+                    <span class="last">₹{{ item.product.price|floatformat:2 }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+
+            <ul class="list list_2">
+              <li><a href="#">Subtotal <span>₹{{ subtotal }}</span></a></li>
+              <li><a href="#">Shipping <span>₹{{ shipping }}</span></a></li>
+              <li><a href="#">Total <span>₹{{ total }}</span></a></li>
+            </ul>
+
+            <div class="creat_account">
+              <input type="checkbox" id="f-option4" name="terms" required />
+              <label for="f-option4">I’ve read and accept the </label>
+              <a href="#">terms & conditions*</a>
+            </div>
+  <h4>Pay with Razorpay</h4>
+            {% if addresses %}
+  <button id="rzp-button1" class="btn btn-success">Pay Now</button>
+            {%else %}
+            <p>choose or add address for payment complete</p>
+            {%endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!--================End Checkout Area =================-->
+
+    <!--================ start footer Area  =================-->
+    <footer class="footer-area section_gap">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Top Products</h4>
+            <ul>
+              <li><a href="#">Managed Website</a></li>
+              <li><a href="#">Manage Reputation</a></li>
+              <li><a href="#">Power Tools</a></li>
+              <li><a href="#">Marketing Service</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Guides</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Experts</a></li>
+              <li><a href="#">Agencies</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 single-footer-widget">
+            <h4>Newsletter</h4>
+            <p>You can trust us. we only send promo offers,</p>
+            <div class="form-wrap" id="mc_embed_signup">
+              <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                method="get" class="form-inline">
+                <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Your Email Address '" required="" type="email">
+                <button class="click-btn btn btn-default">Subscribe</button>
+                <div style="position: absolute; left: -5000px;">
+                  <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                </div>
+  
+                <div class="info"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom row align-items-center">
+          <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          <div class="col-lg-4 col-md-12 footer-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-behance"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "{{ razorpay_key }}",
+    "amount": "{{ amount }}",
+    "currency": "INR",
+    "name": "My Shop",
+    "description": "Order Payment",
+    "order_id": "{{ razorpay_order_id }}",
+    "handler": function (response){
+        // Get the selected address id
+        var selectedAddress = document.querySelector('input[name="selected_address"]:checked')?.value;
+
+        fetch("{% url 'payment_success' %}", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": "{{ csrf_token }}",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_signature: response.razorpay_signature,
+                address_id: selectedAddress   // ✅ pass address id too
+            })
+        }).then(res => window.location.href="{% url 'order_success' %}");
+    }
+};
+
+document.getElementById('rzp-button1')?.addEventListener("click", function(e){
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+    e.preventDefault();
+});
+</script>
+
+<div class="modal fade" id="addAddressModal" tabindex="-1" aria-labelledby="addAddressModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded-3 shadow">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addAddressModalLabel">Add New Address</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="post" action="/add_address/">
+        {% csrf_token %}
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">House / Street</label>
+            <input type="text" class="form-control" name="house" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">City</label>
+            <input type="text" class="form-control" name="city" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">State</label>
+            <input type="text" class="form-control" name="state" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Pincode</label>
+            <input type="text" class="form-control" name="pincode" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" name="phone" required>
+          </div>
+           <div class="mb-3">
+            <label class="form-label">Landmark</label>
+            <input type="text" class="form-control" name="landmark" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Save Address</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+{% include "navbar.html" %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Inventory Report</h2>
+
+    <!-- Filter Form -->
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-md-3">
+            <input type="date" name="date" value="{{ selected_date }}" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <input type="month" name="month" min="1" max="12" value="{{ selected_month }}" placeholder="Month" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <input type="number" name="year" min="2000" max="2100" value="{{ selected_year }}" placeholder="Year" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Filter</button>
+            <a href="{% url 'inventory_report' %}" class="btn btn-secondary">Reset</a>
+        </div>
+    </form>
+
+    <!-- Product Table -->
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Product</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>GST %</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.stock }}</td>
+                <td>₹{{ product.price }}</td>
+                <td>{{ product.gst_percentage }}%</td>
+                <td>{{ product.created_at|date:"Y-m-d" }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center">No products found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

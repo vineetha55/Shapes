@@ -45,6 +45,7 @@
         {% if error %}
   <div class="alert alert-danger text-center">{{ error }}</div>
 {% endif %}
+              <input type="hidden" name="next" value="{{ next }}">
         <div class="mb-3">
           <label for="username">Username</label>
           <input type="text" name="username" class="form-control" required>
@@ -57,6 +58,7 @@
           <button type="submit" class="btn btn-danger">Login</button>
         </div>
       </form>
+ Don't have an account? <a href="{% url 'signup' %}?next={{ request.GET.next|default:request.path }}">Sign Up</a>
     </div>
   </div>
 

@@ -4,8 +4,7 @@
       <div class="banner_inner d-flex align-items-center">
         <div class="container">
           <div
-            class="banner_content d-md-flex justify-content-between align-items-center"
-          >
+            class="banner_content d-md-flex justify-content-between align-items-center">
             <div class="mb-3 mb-md-0">
               <h2 style="color:#ed0f07;">Cart</h2>
               <p>Very us move be blessed multiply night</p>
@@ -29,79 +28,90 @@
               <thead>
                 <tr>
                   <th scope="col">Product</th>
+                  <th>Size/Color</th>
                   <th scope="col">Price</th>
                   <th scope="col">Quantity</th>
                   <th scope="col">Total</th>
                 </tr>
               </thead>
               <tbody>
+              {% for i in cart_items %}
                 <tr>
                   <td>
                     <div class="media">
                       <div class="d-flex">
                         <img
-                          src="{% static 'img/product/20250210040031_IMG_5455.JPG' %}"
+                          src="{{i.product.image.url}}"
                           alt="" width="100" height="100"
                         />
                       </div>
                       <div class="media-body">
-                        <p>Traditional grey kurtha set</p>
+                        <p>{{i.product.name}}</p>
                       </div>
                     </div>
                   </td>
-                  <td>
-                    <h5>$360.00</h5>
+                   <td>
+                     {% if i.selected_size %}
+                    <h5>{{i.selected_size}}</h5>
+                     {% endif %}
+                     {% if i.selected_color %}
+                    <h5>{{i.selected_color}}</h5>
+                     {% endif %}
                   </td>
                   <td>
-                    <div class="product_count">
-                      <input
-                        type="text"
-                        name="qty"
-                        id="sst"
-                        maxlength="12"
-                        value="1"
-                        title="Quantity:"
-                        class="input-text qty"
-                      />
+                    <h5>{{i.product.price}}</h5>
+                  </td>
+                  <td>
+                  <div class="product_count">
+                    <input
+                      type="text"
+                      name="qty"
+                      id="qty-{{i.id}}"
+                      value="{{i.quantity}}"
+                      class="input-text qty"
+                      readonly/>
+                    <button
+                      onclick="updateQuantity({{i.id}}, 1)"
+                      class="increase items-count"
+                      type="button">
+                      <i class="lnr lnr-chevron-up"></i>
+                    </button>
                       <button
-                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                        class="increase items-count"
-                        type="button"
-                      >
-                        <i class="lnr lnr-chevron-up"></i>
-                      </button>
-                      <button
-                        onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+                        onclick="updateQuantity({{i.id}}, -1)"
                         class="reduced items-count"
-                        type="button"
-                      >
+                        type="button">
                         <i class="lnr lnr-chevron-down"></i>
                       </button>
                     </div>
                   </td>
-                  <td>
-                    <h5>$720.00</h5>
+
+                    <td>
+            <h5 id="total-{{i.id}}">{{i.total_price}}</h5>
                   </td>
+                  <td><a href="/remove_from_cart/{{i.id}}" class="main_btn">Remove</a></td>
                 </tr>
+              {% endfor %}
                 <tr>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td>
                     <h5>Subtotal</h5>
                   </td>
-                  <td>
-                    <h5>$2160.00</h5>
-                  </td>
+
+                     <td><h5 id="cart-subtotal">{{ sub_total|floatformat:2 }}</h5></td>
+
                 </tr>
 
                 <tr class="out_button_area">
                   <td></td>
                   <td></td>
                   <td></td>
+                  <td></td>
                   <td>
                     <div class="checkout_btn_inner">
-                      <a class="gray_btn" href="#">Continue Shopping</a>
-                      <a class="main_btn" href="#">Proceed to checkout</a>
+                      <a class="gray_btn" href="/products/">Continue Shopping</a>
+                      <a class="main_btn" href="/checkout/">Proceed to checkout</a>
                     </div>
                   </td>
                 </tr>
@@ -186,3 +196,29 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </footer>
     <!--================ End footer Area  =================-->
 
+<script>
+function updateQuantity(cartId, change) {
+    let input = document.getElementById("qty-" + cartId);
+    let newQty = parseInt(input.value) + change;
+    if (newQty < 1) return; // prevent zero or negative qty
+
+    fetch("{% url 'update_cart' %}", {
+        method: "POST",
+        headers: {
+            "X-CSRFToken": "{{ csrf_token }}",
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: "cart_id=" + cartId + "&quantity=" + newQty,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            input.value = newQty;
+            // update product total
+            document.querySelector("#total-" + cartId).innerText = data.new_total;
+            // update subtotal
+            document.querySelector("#cart-subtotal").innerText = data.subtotal;
+        }
+    });
+}
+</script>

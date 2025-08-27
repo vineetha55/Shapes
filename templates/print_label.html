@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shipping Label</title>
+    <style>
+        body { font-family: monospace; font-size: 14px; }
+        .label-box {
+            width: 280px;   /* thermal bill width */
+            border: 1px dashed #000;
+            padding: 10px;
+            margin: auto;
+        }
+        .label-box h3 {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #000;
+            padding-bottom: 5px;
+        }
+        .label-box p {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body onload="window.print()">
+    <div class="label-box">
+        <h3>Shipping Label</h3>
+        <p><strong>Order ID:</strong> {{ order.id }}</p>
+        <p><strong>Name:</strong> {{ order.address.full_name }}</p>
+        <p><strong>Address:</strong> {{ order.address.house_name }}, {{ order.address.city }}</p>
+        <p><strong>State:</strong> {{ order.address.state }} - {{ order.address.pincode }}</p>
+        <p><strong>Phone:</strong> {{ order.address.phone }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{%include 'navbar.html' %}
+<div class="container mt-4">
+    <h3>Sales Report</h3>
+
+    <!-- Filter Form -->
+    <form method="get" class="mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <input type="date" name="start_date" value="{{ start_date }}" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <input type="date" name="end_date" value="{{ end_date }}" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">Filter</button>
+                <a href="{% url 'sales_report' %}" class="btn btn-secondary">Reset</a>
+            </div>
+        </div>
+    </form>
+
+    <!-- Sales Summary -->
+    <div class="alert alert-info">
+        <strong>Total Sales:</strong> ₹{{ total_sales }}
+    </div>
+
+    <!-- Orders Table -->
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>#{{ order.id }}</td>
+                <td>{{ order.user.fullname }}</td>
+                <td>{{ order.created_at|date:"Y-m-d H:i" }}</td>
+                <td>₹{{ order.total_price }}</td>
+                <td>{{ order.status }}</td>
+
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center">No sales found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

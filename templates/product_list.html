@@ -19,6 +19,8 @@
                     <th>Subcategory</th>
                     <th>Price</th>
                     <th>Stock</th>
+                    <th>Colors</th>
+                    <th>Sizes</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
@@ -27,18 +29,52 @@
                 {% for product in products %}
                 <tr>
                     <td>{{ forloop.counter }}</td>
+
+                    <!-- Show first variant image -->
                     <td>
                         {% if product.image %}
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="60" height="60" style="object-fit:cover;">
+                            <img src="{{ product.image.url }}"
+                                 alt="{{ product.name }}" width="60" height="60"
+                                 style="object-fit:cover; border-radius:6px;">
                         {% else %}
                             <span class="text-muted">No Image</span>
                         {% endif %}
                     </td>
+
+                    <!-- Basic Info -->
                     <td>{{ product.name }}</td>
                     <td>{{ product.subcategory.category.name }}</td>
                     <td>{{ product.subcategory.name }}</td>
                     <td>₹{{ product.price }}</td>
                     <td>{{ product.stock }}</td>
+
+                    <!-- Colors -->
+                    <td>
+                        {% if product.variants.all %}
+                            <div class="d-flex flex-wrap gap-2">
+                                {% for variant in product.variants.all %}
+                                    <div class="text-center">
+                                        <small style="background-color:{{variant.color}};color:white;">{{ variant.color }}</small>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <span class="text-muted">-</span>
+                        {% endif %}
+                    </td>
+
+                    <!-- Sizes -->
+                    <td>
+                        {% if product.sizes.all %}
+                            {% for size in product.sizes.all %}
+                                <span class="badge bg-primary">{{ size.size }}</span>
+                            {% endfor %}
+                        {% else %}
+                            <span class="text-muted">-</span>
+                        {% endif %}
+                    </td>
+
+                    <!-- Status -->
                     <td>
                         {% if product.status == "active" %}
                             <span class="badge bg-success">Active</span>
@@ -46,14 +82,16 @@
                             <span class="badge bg-secondary">Inactive</span>
                         {% endif %}
                     </td>
+
+                    <!-- Actions -->
                     <td>
-                        <a href="#" class="btn btn-sm btn-info">Edit</a>
-                        <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="/edit_product/{{ product.id }}" class="btn btn-sm btn-info">Edit</a>
+                        <a href="/delete_product/{{ product.id }}" class="btn btn-sm btn-danger">Delete</a>
                     </td>
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="9" class="text-center text-muted">No products found.</td>
+                    <td colspan="11" class="text-center text-muted">No products found.</td>
                 </tr>
                 {% endfor %}
             </tbody>
