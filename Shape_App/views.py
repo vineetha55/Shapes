@@ -644,7 +644,7 @@ def edit_profile(request,id):
 
 
 # Add Address
-def add_address(request):
+def add_addresses(request):
     user_id = request.session.get("userid")
 
     if request.method == "POST":
@@ -652,15 +652,15 @@ def add_address(request):
             user_id=user_id,
             full_name=request.POST.get("full_name"),
             phone=request.POST.get("phone"),
-            address=request.POST.get("address"),
+            house_name=request.POST.get("house_name"),
             city=request.POST.get("city"),
             state=request.POST.get("state"),
-            zipcode=request.POST.get("zipcode"),
+            pincode=request.POST.get("pincode"),
         )
         messages.success(request, "Address added successfully!")
         return redirect("my_account")
 
-    return render(request, "add_address.html")
+    return render(request, "my_account.html")
 
 
 # Edit Address
@@ -670,18 +670,22 @@ def edit_address(request, id):
     if request.method == "POST":
         address.full_name = request.POST.get("full_name")
         address.phone = request.POST.get("phone")
-        address.address = request.POST.get("address")
+        address.house_name = request.POST.get("house_name")
         address.city = request.POST.get("city")
         address.state = request.POST.get("state")
-        address.zipcode = request.POST.get("zipcode")
+        address.pincode = request.POST.get("pincode")
         address.save()
         messages.success(request, "Address updated successfully!")
         return redirect("my_account")
-
     return render(request, "edit_address.html", {"address": address})
 
 
 # Order Detail
-def order_detail(request, id):
+def order_details(request, id):
     order = get_object_or_404(Order, id=id, user=request.session.get("userid"))
     return render(request, "order_detail.html", {"order": order})
+
+
+
+
+

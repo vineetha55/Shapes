@@ -50,9 +50,9 @@ urlpatterns=[
     path("my_account/",views.my_account,name="my_account"),
     path("signout/",views.signout,name="signout"),
     path("edit-profile/<id>", views.edit_profile, name="edit_profile"),
-    path("add-address/", views.add_address, name="add_address"),
+    path("add-address/", views.add_addresses, name="add_addresses"),
     path("edit-address/<int:id>/", views.edit_address, name="edit_address"),
-    path("order/<int:id>/", views.order_detail, name="order_detail"),
+    path("order/<int:id>/", views.order_details, name="order_details"),
 
 
 ]

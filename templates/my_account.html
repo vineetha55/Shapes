@@ -86,10 +86,12 @@
                                     <div class="modal-body">
                                       <input type="text" name="full_name" class="form-control mb-2" value="{{ addr.full_name }}" required>
                                       <input type="text" name="phone" class="form-control mb-2" value="{{ addr.phone }}" required>
-                                      <textarea name="address" class="form-control mb-2" required>{{ addr.address }}</textarea>
+                                      <textarea name="house_name" class="form-control mb-2" required>{{ addr.house_name }}</textarea>
                                       <input type="text" name="city" class="form-control mb-2" value="{{ addr.city }}" required>
                                       <input type="text" name="state" class="form-control mb-2" value="{{ addr.state }}" required>
-                                      <input type="text" name="zipcode" class="form-control mb-2" value="{{ addr.zipcode }}" required>
+                                      <input type="text" name="pincode" class="form-control mb-2" value="{{ addr.pincode }}" required>
+                                      <input type="text" name="landmark" class="form-control mb-2" value="{{ addr.landmark }}" required>
+
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -183,15 +185,16 @@
         <h5 class="modal-title">Add Address</h5>
         <button type="button" class="btn-close" data-dismiss="modal"></button>
       </div>
-      <form method="post" action="{% url 'add_address' %}">
+      <form method="post" action="{% url 'add_addresses' %}">
         {% csrf_token %}
         <div class="modal-body">
           <input type="text" name="full_name" class="form-control mb-2" placeholder="Full Name" required>
           <input type="text" name="phone" class="form-control mb-2" placeholder="Phone" required>
-          <textarea name="address" class="form-control mb-2" placeholder="Address" required></textarea>
+          <textarea name="house_name" class="form-control mb-2" placeholder="House Name" required></textarea>
           <input type="text" name="city" class="form-control mb-2" placeholder="City" required>
           <input type="text" name="state" class="form-control mb-2" placeholder="State" required>
-          <input type="text" name="zipcode" class="form-control mb-2" placeholder="Zip Code" required>
+          <input type="text" name="pincode" class="form-control mb-2" placeholder="Pincode" required>
+          <input type="text" name="landmark" class="form-control mb-2" required>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

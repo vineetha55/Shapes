@@ -6,8 +6,7 @@
       <div class="banner_inner d-flex align-items-center">
         <div class="container">
           <div
-            class="banner_content d-md-flex justify-content-between align-items-center"
-          >
+            class="banner_content d-md-flex justify-content-between align-items-center">
             <div class="mb-3 mb-md-0">
               <h2>Product Checkout</h2>
               <p>Very us move be blessed multiply night</p>
@@ -24,35 +23,32 @@
 
     <!--================Checkout Area =================-->
   <section class="checkout_area section_gap">
-  <div class="container">
-    <div class="billing_details">
-      <div class="row">
-        <div class="col-lg-6">
-
-  <!-- Saved Address List -->
-  <h4 class="mb-3">Select Address</h4>
-  <div class="list-group">
-    <!-- Example saved addresses loop -->
-    {% for address in addresses %}
-      <label class="list-group-item d-flex justify-content-between align-items-center">
-        <div>
-          <input class="form-check-input me-2" type="radio" name="selected_address" value="{{ address.id }}" {% if forloop.first %}checked{% endif %}>
-          <strong>{{ address.full_name }}</strong><br>
-          {{ address.house_name }}, {{ address.city }}, {{ address.state }} - {{ address.pincode }}<br>
-          <small>{{ address.phone }}</small>
+    <div class="container">
+      <div class="billing_details">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4 class="mb-3">Select Address</h4>
+              <div class="list-group">
+                {% for address in addresses %}
+                <label class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <input class="form-check-input me-2" type="radio" name="selected_address" value="{{ address.id }}" {% if forloop.first %}checked{% endif %}>
+                    <strong>{{ address.full_name }}</strong><br>
+                    {{ address.house_name }}, {{ address.city }}, {{ address.state }} - {{ address.pincode }}<br>
+                    <small>{{ address.phone }}</small>
+                  </div>
+              </label>
+            {% empty %}
+            <p>No saved addresses found.</p>
+            {% endfor %}
         </div>
-      </label>
-    {% empty %}
-      <p>No saved addresses found.</p>
-    {% endfor %}
-  </div>
 
-  <!-- Add New Address Button -->
-  <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#addAddressModal">
-    + Add New Address
-  </button>
+        <!-- Add New Address Button -->
+        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#addAddressModal">
+          + Add New Address
+        </button>
 
-</div>
+      </div>
 
 <!-- Modal for Add New Address -->
 
@@ -86,19 +82,18 @@
               <label for="f-option4">I’ve read and accept the </label>
               <a href="#">terms & conditions*</a>
             </div>
-  <h4>Pay with Razorpay</h4>
-            {% if addresses %}
-  <button id="rzp-button1" class="btn btn-success">Pay Now</button>
+            <h4>Pay with Razorpay</h4>
+             {% if addresses %}
+            <button id="rzp-button1" class="btn btn-success">Pay Now</button>
             {%else %}
             <p>choose or add address for payment complete</p>
             {%endif %}
-
           </div>
-        </div>
+                </div>
+              </div>
+          </div>
       </div>
-    </div>
-  </div>
-</section>
+  </section>
 
     <!--================End Checkout Area =================-->
 
@@ -162,8 +157,8 @@
         </div>
         <div class="footer-bottom row align-items-center">
           <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           <div class="col-lg-4 col-md-12 footer-social">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -172,7 +167,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
           </div>
         </div>
       </div>
-    </footer>
+</footer>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 var options = {

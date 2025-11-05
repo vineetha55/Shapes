@@ -62,7 +62,7 @@
           <button type="submit" class="btn btn-danger">SignUp</button>
         </div>
       </form>
- <a href="{% url 'signup' %}?next={{ request.GET.next|default:request.path }}">Sign Up</a>
+ Already have an account? <a href="{% url 'signin' %}?next={{ request.GET.next|default:request.path }}">Sign In</a>
     </div>
   </div>
 
