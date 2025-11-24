@@ -14,6 +14,7 @@
                 <tr>
                     <th>#</th>
                     <th>Image</th>
+                    <th>Video</th>
                     <th>Name</th>
                     <th>Category</th>
                     <th>Subcategory</th>
@@ -39,6 +40,15 @@
                         {% else %}
                             <span class="text-muted">No Image</span>
                         {% endif %}
+                    </td>
+                    <td>
+                    {% if product.video %}
+                        <video width="80" height="60" controls muted preload="metadata">
+                            <source src="{{ product.video.url }}">
+                        </video>
+                    {% else %}
+                        <span class="text-muted">No Video</span>
+                    {% endif %}
                     </td>
 
                     <!-- Basic Info -->

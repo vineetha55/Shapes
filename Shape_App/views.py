@@ -74,12 +74,13 @@ def add_product(request):
         product = tbl_Product.objects.create(
             subcategory_id=request.POST.get("subcategory"),
             name=request.POST.get("name"),
+            brand=request.POST.get("brand"),
             description=request.POST.get("description"),
             price=request.POST.get("price"),
             stock=request.POST.get("stock"),
             image=request.FILES.get("image"),
+            video=request.FILES.get("video"),
             material=request.POST.get("material"),
-            brand=request.POST.get("brand"),
             gender=request.POST.get("gender"),
             status=request.POST.get("status"),
             gst_percentage=request.POST.get("gst_percentage")
@@ -122,6 +123,8 @@ def edit_product(request, pk):
         product.stock = request.POST.get("stock")
         if request.FILES.get("image"):
             product.image = request.FILES.get("image")
+        if request.FILES.get("video"):
+            product.video = request.FILES.get("video")
         product.material = request.POST.get("material")
         product.brand = request.POST.get("brand")
         product.gender = request.POST.get("gender")
@@ -374,6 +377,19 @@ def shop_by_category(request,id):
         product = tbl_Product.objects.filter(subcategory__category__id=id)
 
     return render(request,"shop_by_category.html",{"sub_cat":sub_cat,"all_cat":all_cat,"product":product})
+
+
+def shop_by_category_own(request,str,id):
+    all_cat=tbl_Category.objects.filter(status="active")
+    sub_cat = tbl_SubCategory.objects.filter(category=id)
+    subcat_id = request.GET.get("subcategory")
+    if subcat_id:
+        product = tbl_Product.objects.filter(subcategory_id=subcat_id,brand=str)
+    else:
+        product = tbl_Product.objects.filter(subcategory__category__id=id,brand=str)
+
+    return render(request,"shop_by_category.html",{"sub_cat":sub_cat,"all_cat":all_cat,"product":product})
+
 
 def wishlist(request):
     return render(request,"wishlist.html")
@@ -685,7 +701,10 @@ def order_details(request, id):
     order = get_object_or_404(Order, id=id, user=request.session.get("userid"))
     return render(request, "order_detail.html", {"order": order})
 
-
+def own_brand(request):
+    product = tbl_Product.objects.filter(status="active",brand="shapeme")
+    categories = tbl_Category.objects.filter(status="active")
+    return render(request, "own_brand.html", {"product": product, "all_cat": categories})
 
 
 

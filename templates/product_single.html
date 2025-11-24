@@ -25,9 +25,50 @@
   <div class="container">
     <div class="row s_product_inner">
       <div class="col-lg-6">
-        <div class="s_product_img">
-          <img src="{{ product.image.url }}" class="img-fluid rounded" alt="{{ product.name }}">
-        </div>
+<!--        <div class="s_product_img">-->
+<!--          <img src="{{ product.image.url }}" class="img-fluid rounded" alt="{{ product.name }}">-->
+<!--            {% if product.video %}-->
+<!--                <video class="mt-3 w-100 rounded" controls muted>-->
+<!--                    <source src="{{ product.video.url }}">-->
+<!--                </video>-->
+<!--            {% endif %}-->
+<!--        </div>-->
+
+          <div id="productCarousel" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner">
+
+    <!-- Image Slide -->
+    <div class="carousel-item active">
+      <img src="{{ product.image.url }}" class="d-block w-100 rounded" alt="{{ product.name }}">
+    </div>
+
+    <!-- Video Slide -->
+    {% if product.video %}
+    <div class="carousel-item">
+      <video class="d-block w-100 rounded"
+         autoplay
+         muted
+         loop
+         playsinline
+         preload="auto">
+      <source src="{{ product.video.url }}">
+  </video>
+    </div>
+    {% endif %}
+
+  </div>
+
+  <!-- Controls -->
+  <a class="carousel-control-prev" href="#productCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#productCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
       </div>
       <div class="col-lg-5 offset-lg-1">
         <div class="s_product_text">

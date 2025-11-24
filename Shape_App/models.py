@@ -43,6 +43,7 @@ class tbl_Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     gst_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
     image = models.ImageField(upload_to="products/",null=True)
+    video=models.FileField(upload_to='Videos/',null=True)
 
     def __str__(self):
         return self.name
